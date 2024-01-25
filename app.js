@@ -30,11 +30,11 @@ function obtenerMensajeFinal() {
 
     switch (opcion) {
         case '1':
-            return 'Felicitaciones, excelente. Has finalizado el curso desarrollando habilidades destacables.';
+            return 'felicitaciones. La entrega está excelente, cumple con todo lo solicitado. Te felicito por el gran proyecto realizado.';
         case '2':
-            return 'Está muy bien, hay detalles para mejorar, no hace falta re entrega. Continúa así.';
+            return 'está muy bien, hay detalles para mejorar,pero no es necesario hacer una re entrega. Hiciste un gran trabajo, te felicito por todo lo que aprendiste estos dos meses. ¡Seguí así!';
         case '3':
-            return 'Hay varias cosas para mejorar, tenés que hacer la re entrega. Toma esto como una oportunidad para crecer.';
+            return 'lamentablemente, hay varias cosas para mejorar, tenés que hacer la re entrega. ¡A no bajar los brazos! Venís por buen camino.';
         default:
             return 'Mensaje no definido.';
     }
