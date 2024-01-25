@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input, select, button {
+    margin-bottom: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#resultado {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+#mensaje-final {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #e6f7ff;
+}
+
+/* Añadir estilos adicionales según sea necesario */
+
+    </style>
+    <title>Checker App</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Checker App</h1>
+
+        <!-- Input para el nombre -->
+        <label for="nombre">Ingrese su nombre:</label>
+        <input type="text" id="nombre" placeholder="Su nombre">
+
+        <!-- ====== Presentación ====== -->
+        <div class="section">
+            <h2>Presentación</h2>
+
+            <div class="item">
+                <label for="presentacion-cargado">Se presenta el sitio cargado en el servidor:</label>
+                <select id="presentacion-cargado" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="presentacion-github">Se hace uso correcto de GitHub:</label>
+                <select id="presentacion-github" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="presentacion-commits">Correctos mensajes para cada commit:</label>
+                <select id="presentacion-commits" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="presentacion-nomenclatura">Correcta nomenclatura de archivos y carpetas:</label>
+                <select id="presentacion-nomenclatura" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="presentacion-estructura">Correcta estructura de carpetas para organizar el proyecto:</label>
+                <select id="presentacion-estructura" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- ====== Sitio web ====== -->
+        <div class="section">
+            <h2>Sitio web</h2>
+
+            <div class="item">
+                <label for="sitio-web-responsive">Sitio 100% responsive:</label>
+                <select id="sitio-web-responsive" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="sitio-web-archivos">El sitio cuenta con los 5 archivos HTML correspondientes:</label>
+                <select id="sitio-web-archivos" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="sitio-web-contenido">Correcta cantidad de contenido para cada sección:</label>
+                <select id="sitio-web-contenido" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="sitio-web-diseno">Diseño prolijo, buena presentación del contenido:</label>
+                <select id="sitio-web-diseno" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="sitio-web-textos-imagenes">Textos reales, imágenes apropiadas y correcta paleta de
+                    colores:</label>
+                <select id="sitio-web-textos-imagenes" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="sitio-web-navegacion">Navegación clara:</label>
+                <select id="sitio-web-navegacion" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- ====== HTML ====== -->
+        <div class="section">
+            <h2>HTML</h2>
+
+            <div class="item">
+                <label for="html-codigo">Código prolijo:</label>
+                <select id="html-codigo" class="checker">
+                    <option value="tick">Cumple con
+
+                        lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="html-estructura">Se respeta estructura básica en cada sección (header, main,
+                    footer):</label>
+                <select id="html-estructura" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="html-etiquetas-semanticas">Correcto uso de etiquetas semánticas:</label>
+                <select id="html-etiquetas-semanticas" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="html-linkeo-archivos">Correcto linkeo entre archivos HTML y hacia hojas de estilos:</label>
+                <select id="html-linkeo-archivos" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="html-etiquetas-titulos">Correcto uso de etiquetas de encabezado/títulos:</label>
+                <select id="html-etiquetas-titulos" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="html-alt-imagenes">Se completa el ALT de las imágenes:</label>
+                <select id="html-alt-imagenes" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="html-atributos-formularios">Correcta implementación de atributos y valores para generar
+                    formularios:</label>
+                <select id="html-atributos-formularios" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- ====== SEO ====== -->
+        <div class="section">
+            <h2>SEO</h2>
+
+            <div class="item">
+                <label for="seo-meta">Se aplican etiquetas meta description y title correctamente personalizadas para
+                    cada sección:</label>
+                <select id="seo-meta" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+        </div>
+
+        Aquí tienes la sección de Estilos con todos sus ítems:
+
+        ```html
+        <!-- ====== Estilos ====== -->
+        <div class="section">
+            <h2>Estilos</h2>
+
+            <div class="item">
+                <label for="codigo-prolijo">Código prolijo:</label>
+                <select id="codigo-prolijo" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="herramientas-clase">Correcto uso de herramientas para generar la estructura:</label>
+                <select id="herramientas-clase" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="clases-estructuradas">Clases claras y con una forma de estructura definida:</label>
+                <select id="clases-estructuradas" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="propiedades-estilos">Correcta implementación de las diferentes propiedades:</label>
+                <select id="propiedades-estilos" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="unidades-medida">Unidades de medida correctamente implementadas:</label>
+                <select id="unidades-medida" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="animaciones-transiciones">Se aplican animaciones/transiciones:</label>
+                <select id="animaciones-transiciones" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="sass-correcto">Correcto uso de SASS:</label>
+                <select id="sass-correcto" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="estructura-sass">Correcta estructura de carpetas de SASS:</label>
+                <select id="estructura-sass" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="codigo-partials">Se divide el código en los respectivos partials:</label>
+                <select id="codigo-partials" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="variables-sass">Se utilizan variables en SASS:</label>
+                <select id="variables-sass" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <label for="nesting-selectores">Se aplica nesting de selectores en SASS:</label>
+                <select id="nesting-selectores" class="checker">
+                    <option value="tick">Cumple con lo esperado ✅</option>
+                    <option value="cross">No alcanza lo esperado ❌</option>
+                    <option value="warning">Cerca de lo esperado ⚠️</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Select para elegir mensaje final -->
+        <label for="opciones-mensaje">Elija su mensaje final:</label>
+        <select id="opciones-mensaje">
+            <option value="1">¡Increíble, ${nombre}! Has concluido el curso con excelencia, demostrando habilidades
+                asombrosas y un compromiso destacado. ¡Felicidades!</option>
+            <option value="2">¡Bravo, ${nombre}! Tu desempeño ha sido destacado, y aunque siempre hay oportunidades de
+                mejora, no hace falta reentrega. ¡Sigue así, estás en el camino correcto!</option>
+            <option value="3">¡Vamos, ${nombre}! Hay varios aspectos que puedes pulir, y es necesario realizar una
+                reentrega. Tómate esto como una oportunidad para crecer y mejorar. ¡Tú puedes lograrlo!</option>
+        </select>
+
+
+        <button onclick="generarTexto()">Generar Texto</button>
+
+        <div id="resultado"></div>
+        <div id="mensaje-final"></div>
+
+        <button onclick="copiarTexto()">Copiar Texto</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
